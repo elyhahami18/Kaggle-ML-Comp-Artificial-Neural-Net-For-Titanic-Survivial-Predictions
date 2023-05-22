@@ -1,83 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # Project #3 -- Kaggle's Titanic Competition
-# 
-
-# ### In this project you are going to utilize all the tools that we have learned this term to build an artificial neural network that predicts who lives and who dies from the Titanic disaster based on information about the passengers.  
-
-# ### You should have, in Homework #7, already downloaded both the training data and testing data for this task.  Here are the specifics of what you will need to complete for this project:
-# 
-# ### <u>The Task:</u>
-# 
-# ### Your ultimate goal is to, using Keras, build the best predictive model you can build.  To do this, you will need to...
-# 
-# #### 1.  Analyze the data in the training set to try and figure out what factors correlate well to survival.  This may required converting data that is not numeric into numeric data (preferably between -1 and 1).  So, for instance, you could make male = -1 and female = +1.
-# 
-# #### 2.  Normalize the data that you decide to use so that the values are relatively similar.  Watch out for outliers if you do this.  If someone paid a ticket fare of \\$10,000 and everyone else paid in the range of \\$100's of dollars, normalizing to \\$10,000 will make the range of the rest of the fares incredibly low.
-# 
-# #### 3. Watch for missing data.  If you are just missing a few values, you can remove those passengers from the training set.  If you are missing a lot of values, you either need to fill those in (maybe with zeros) or you need to not use that factor.
-# 
-# #### 4. Combine the factors that you wish to train on into a Numpy array.  There are hints on how to do this in Homework #7.  
-# 
-# #### 5. Train your neural network on the data using Keras! 
-# 
-# #### 6. Try to optimize your training model!  You can do this by changing all sorts of things...
-# <br>
-# <li>Training rate</li>
-# <li>Activation functions</li>
-# <li>Loss function</li>
-# <li>Input data you choose to train on or how you prepare that data</li>
-# 
-# #### 7. Once you are happy with your model, take the test data, perform the same adjustments that you made to the training data, and run the test data through your best model.  Export that data to an Excel file and submit it to Kaggle!  You can do this last step in class on Friday. I won't be there, but I will leave instructions on how to do all these things.
-
-# ### <u>Important Notes:</u> 
-# 
-# #### 1. Please make all your data adjustments in a Jupyter Notebook (below if you choose) as opposed to in Excel.  You will need to perform them all to both the training data and the test data, so it's in your best interest to keep all your code (and to document it yourself) so you can repeat everything you did to the training set on the test set.
-# 
-# #### 2.  This project is due at the end of class on Friday, but all you need to have finished before the class is the model itself.  You can use class time to prepare the test data, run it through your model, prepare your Excel file, and submit it to Kaggle.
-# 
-# #### 3.  You should save all your models, just in case changes that you make don't work.  This is particularly true if you are changing around your inputs.  So every time you make a substantive change, I would suggest you create a new Notebook.  You can save a particular model using the following command:
-# <br>
-# <li>model.save('path/to/location')</li>
-# 
-# #### You can load a saved model using:
-# <br>
-# <li>model = keras.models.load_model('path/to/location')</li>
-# 
-# #### 4.  There are a lot of tutorials on YouTube and other locations that tell you how do make a winning Titanic project.  Basing your code off of one of those videos is a violation both of Lawrenceville's Honor Code and the contract you signed at the beginning of the term, and it is a violation of the competition rules.   You are permitted to visit the brief tutorial here on the download and submission process:
-# 
-# https://www.kaggle.com/code/alexisbcook/titanic-tutorial/
-# 
-# #### 5.  Your grade for this project is about 85% effort (I want to see you building lots of different models with different inputs, different learning rates, etc.).  That's one reason to put different models in different Jupyter Notebooks.  The other 15% is based on your relative performance in the competition:
-# <br>
-# <li> 1st quartile (<76.0%) = No bonus</li>
-# <li> 2nd quartile (76.0% to <77.0%) = 5% bonus</li>
-# <li> 3rd quartile (77.0% to <78.0%) = 10% bonus</li>
-# <li> 4th quartile (>=78%) = 15% bonus</li>
-# 
-# #### FYI -- my first submission put me in the 3rd quartile (which I did in an afternoon). 
-
-# 
-
-# In[2]:
-
-
-##bin fare into low, medium, and high?
-##change nuerons/hidden layers?
-#Beware of overfitting: 
-#As you increase the depth of your network, you may encounter overfitting, 
-#where the model becomes too specialized to the training data and fails to generalize well to new,
-#unseen data. Regularization techniques, such as dropout or L2 regularization, can help mitigate overfitting.
-
-
-##Other things?
-# https://github.com/liyenhsu/Neural-Network-with-Keras-for-Kaggle-Titanic-Dataset/blob/master/titanic.ipynb
-
-
 # In[1]:
-
-
 ##downloaded the three files
 import pandas as pd
 import numpy as np
@@ -85,7 +6,6 @@ tr_df = pd.read_csv('train.csv') #loading the train data
 
 
 # In[2]:
-
 
 new_title = {
     "Capt":       "Officer",
